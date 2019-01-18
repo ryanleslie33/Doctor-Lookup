@@ -24,3 +24,13 @@ th {
 td, th {
   padding-right: 20px;
 }
+
+
+table {
+  font-size: 14px;
+}
+td,th {
+  height: 30px;
+  border-bottom: 1px dotted #d6d6d6;
+  padding-right: 20px;
+}

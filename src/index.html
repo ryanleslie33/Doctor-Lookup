@@ -40,8 +40,31 @@
         </tbody>
     </table>
 </script>
+
+
+
+
+
+<h3>BetterDoctor - Conditions</h3>
+<div id="content-placeholder"></div>
+<script id="conditions-template" type="text/x-handlebars-template">
+    <table>
+        <thead>
+        <th>Name</th>
+        <th>uid</th>
+
+        </thead>
+        <tbody>
+        {{#data}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{uid}}</td>
+
+
+        </tr>
+        {{/data}}
+        </tbody>
+    </table>
+</script>
 </body>
-
-
-  </body>
 </html>
