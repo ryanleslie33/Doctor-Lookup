@@ -34,3 +34,35 @@ td,th {
   border-bottom: 1px dotted #d6d6d6;
   padding-right: 20px;
 }
+
+h3 {
+    color: #bb3794;
+}
+a {
+    text-decoration: none;
+}
+
+a, a:visited {
+    color: rgb(84, 180, 210);
+}
+
+a:hover {
+    color: rgb(51,159,192);
+}
+
+th {
+    text-align: left;
+}
+
+td, th {
+  padding-right: 20px;
+}
+
+.address {
+    font-size: 0.8em;
+    color: #888;
+}
+
+.bio {
+    font-size: 0.9em;
+}
