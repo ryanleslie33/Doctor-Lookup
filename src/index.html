@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -19,6 +20,9 @@
             <th>Name</th>
             <th>Title</th>
             <th>Picture</th>
+            <th>practices</th>
+
+
         </thead>
         <tbody>
         {{#data}}
@@ -27,6 +31,20 @@
               <img src="{{ratings.0.image_url_small}}"></img></td>
             <td>{{profile.title}}</td>
             <td><img src="{{profile.image_url}}"></img></td>
+
+            <td>
+              <p class="address">
+                    {{#practices}}
+                    {{name}}<br>
+                    {{visit_address.street}}<br>
+                    {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}
+                    <a href="{{website}}">visit website</a>
+
+                    <br>
+                      <input type="checkbox" name="" value="" disabled {{#if accepts_new_patients}}checked{{/if}}>
+
+                    {{/practices}}
+                </p></td>
         </tr>
         {{/data}}
         </tbody>
