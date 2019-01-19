@@ -6,118 +6,79 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 </head>
 <body>
-<h3>BetterDoctor - Doctor Search Results</h3>
+  <h3>BetterDoctor - Doctor Search Results</h3>
 
 
-<form id="form" action="index.html" method="post">
-  <label for="name">name</label>
-  <input id="inputName" type="text" name="medical" value="">
-  <button type="submit" name="button">Enter</button>
-  <div id="content-placeholder"></div>
-  <script id="docs-template" type="text/x-handlebars-template">
-    <table>
+  <form id="form" action="index.html" method="post">
+    <label for="name">name</label>
+    <input id="inputName" type="text" name="medical" value="">
+    <button type="submit" name="button">Enter</button>
+    <div id="content-placeholder"></div>
+    <script id="docs-template" type="text/x-handlebars-template">
+      <table>
         <thead>
-            <th>Name</th>
-            <th>Title</th>
-            <th>Picture</th>
-            <th>practices</th>
+          <th>Name</th>
+          <th>Title</th>
+          <th>Picture</th>
+          <th>practices</th>
 
 
         </thead>
         <tbody>
-        {{#data}}
-        <tr>
+          {{#data}}
+          <tr>
             <td><a href="{{attribution_url}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a><br>
               <img src="{{ratings.0.image_url_small}}"></img></td>
-            <td>{{profile.title}}</td>
-            <td><img src="{{profile.image_url}}"></img></td>
+              <td>{{profile.title}}</td>
+              <td><img src="{{profile.image_url}}"></img></td>
 
-            <td>
-              <p class="address">
-                    {{#practices}}
-                    {{name}}<br>
-                    {{visit_address.street}}<br>
-                    {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}
-                    <a href="{{website}}">visit website</a>
+              <td>
+                <p class="address">
+                  {{#practices}}
+                  {{name}}<br>
+                  {{visit_address.street}}<br>
+                  {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}
+                  <a href="{{website}}">visit website</a>
 
-                    <br>
-                      <input type="checkbox" name="" value="" disabled {{#if accepts_new_patients}}checked{{/if}}>
+                  <br>
+                  <input type="checkbox" name="" value="" disabled {{#if accepts_new_patients}}checked{{/if}}>
 
-                    {{/practices}}
+                  {{/practices}}
                 </p></td>
-        </tr>
-        {{/data}}
-        </tbody>
-    </table>
-  </script>
-
-<div id="content-placeholder"></div>
-<script id="content-address" type="text/x-handlebars-template">
-<h3>BetterDoctor - {{data.profile.first_name}} {{data.profile.last_name}}, {{data.profile.title}}</h3>
-    <p class="address">
-        {{#data.practices}}
-        {{name}}<br>
-        {{visit_address.street}}<br>
-        {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}
-        {{/data.practices}}
-    </p>
-    <p class="bio">{{data.profile.dynamic_bio}}</p>
-    <table>
-        <tr>
-
-            <td><a href="{{data.attribution_url}}" target="_new">{{data.attribution_url}}</a></td>
-        </tr>
-        <tr>
-            <th>Picture</th>
-            <td><img src="{{data.profile.image_url}}"></img></td>
-        </tr>
-        <tr>
-            <th>Specialties</th>
-            <td>
-            {{#data.specialties}}
-            {{name}}<br>
-            {{/data.specialties}}
-            </td>
-        </tr>
-    </table>
-  </script>
-</form>
+              </tr>
+              {{/data}}
+            </tbody>
+          </table>
+        </script>
 
 
+      </form>
+      <form id="issues" action="index.html" method="post">
+        <label for="medical">medical issues</label>
+        <input id="conditions" type="text" name="medical" value="">
+        <button type="submit" name="button">Enter</button>
 
-
-
-
-
-
-
-
-<form id="issues" action="index.html" method="post">
-  <label for="medical">medical issues</label>
-  <input id="conditions" type="text" name="medical" value="">
-  <button type="submit" name="button">Enter</button>
-
-<h3>BetterDoctor - Conditions</h3>
-<div id="content-placeholder"></div>
-<script id="conditions-template" type="text/x-handlebars-template">
-  <table>
-      <thead>
-          <th>Name</th>
-          <th>Title</th>
-          <th>Picture</th>
-      </thead>
-      <tbody>
-      {{#data}}
-      <tr>
-          <td><a href="{{attribution_url}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a><br>
-            <img src="{{ratings.0.image_url_small}}"></img></td>
-          <td>{{profile.title}}</td>
-          <td><img src="{{profile.image_url}}"></img></td>
-      </tr>
-      {{/data}}
-      </tbody>
-  </table>
-</script>
-</form>
-</body>
-</html>
+        <h3>BetterDoctor - Conditions</h3>
+        <div id="content-placeholder"></div>
+        <script id="conditions-template" type="text/x-handlebars-template">
+          <table>
+            <thead>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Picture</th>
+            </thead>
+            <tbody>
+              {{#data}}
+              <tr>
+                <td><a href="{{attribution_url}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a><br>
+                  <img src="{{ratings.0.image_url_small}}"></img></td>
+                  <td>{{profile.title}}</td>
+                  <td><img src="{{profile.image_url}}"></img></td>
+                </tr>
+                {{/data}}
+              </tbody>
+            </table>
+          </script>
+        </form>
+      </body>
+      </html>

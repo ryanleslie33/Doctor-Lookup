@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import {Doctor} from './doctor.js';
+// import {Doctor} from './doctor.js';
 
 $(document).ready(function() {
 
@@ -11,10 +11,6 @@ $(document).ready(function() {
 
     let input = $('#inputName').val();
     $('#inputName').val("");
-
-    // let doctor = new Doctor();
-    // let promise = doctor.findDoctor(input);
-
     var resource_url = `https://api.betterdoctor.com/2016-03-01/doctors?query=${input}&location=45.5122,-122.6587,100&skip=2&limit=10&user_key=${process.env.exports.apiKey}`;
 
 
@@ -26,7 +22,7 @@ $(document).ready(function() {
           var doctor = Handlebars.compile(document.getElementById('docs-template').innerHTML);
           document.getElementById('content-placeholder').innerHTML = doctor(data) ;
         }
-      // var body = jQuery.parseJSON(JSON.stringify(data));
+
 
     }).fail(function(error) {
       if(error.responseJSON.meta.message){
@@ -45,7 +41,6 @@ $("#issues").submit(function(event){
 
   $.get(resource_url, function (data) {
 
-  //var body = jQuery.parseJSON(JSON.stringify(data));
       var template = Handlebars.compile(document.getElementById('conditions-template').innerHTML);
       document.getElementById('content-placeholder').innerHTML = template(data);
   });
