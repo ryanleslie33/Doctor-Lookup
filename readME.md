@@ -1,23 +1,20 @@
 # _Doctor Lookup_
 
-#### _{Allows a user to add and delete list of hair stylist and their personal clients}, {december 7, 2018}_
+#### _{Allows a user to enter in information they want to receive about doctors in there area}, {January 15, 2018}_
 
 #### By _**{Ryan Leslie}**_
 
 ## Description
 
-_{This application starts off at a home page where it gives you an option of adding a stylist to a list. and another to view a list of all the hair stylist that you have entered. Once you input a stylist and hit add, it will be added to that list. There is a clickable link on each of the stylist that you have added, when click on then it then gives you an option of adding clients to these specific hairstylist, each time you add a client it will be added to a list under that stylist and display each hair stylist and there list of clients. }_
+_this application has two user input one for entering in a name of a doctor you are a trying to look up based in the greater portland area, that will pull up a list of 10 doctors that meet that search criteria. The second input will allow a user to input a symptom they are having and output will return a list of doctors in that practice_
 
 ## Setup/Installation Requirements
 
 * _Clone this repository to your terminal_
 * _open it up in atom or VisualStudio_
-* _download if mamp if you dont have it already and run the server.(If you have never used this before visit www.LearnHowToprogram.com and type php or mysql into the search bar in the corner of the page)._
-* _Once your server in mamp is up and running you need to open your php administration under toolsbar in mamp window_
-* _Once this is open click import tab at the top of the page and upload the file at the bottom of the cloned repo named ryanleslie_sql._
-* _Once you have file imported you can cd into this project in the Directory and enter dotnet build then dotnet run._
-* _Once it is running you should a url at the bottom of the terminal, put that url pathway directly into the browser and hit enter._
-* _At this point you should be able to successfully run this application._
+* _run a npm install in your terminal_
+* _if everything loads correctly you should be able to run npm run start and use the application_
+
 
 ## Specifications
 
@@ -36,7 +33,7 @@ _{This application starts off at a home page where it gives you an option of add
 
 ## Known Bugs
 
-_{There is only one bug at this time which is the application will not start over when you refresh the page, you much re-enter the url pathway into the browser every time you want to clear your previous information and start over.}_
+_there is no known bugs at this time_
 
 ## Support and contact details
 
@@ -46,7 +43,7 @@ _{If you have any questions about this application or are having trouble running
 
 ## Technologies Used
 
-_This application is written all in C#, using its sub-language Razor that helps it read code and use css and html through C#. This application also uses mysql and php-administration for databases_
+_this application is written in javascript_
 
 ### License
 
