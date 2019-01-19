@@ -3,35 +3,37 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import {Doctor} from './doctor.js';
-const apiKey = '96f18561aaa75db4fdd9ef618242d8ae';
+
 $(document).ready(function() {
 
-$("#form").submit(function(event){
-  event.preventDefault();
-  let input = $('#inputName').val();
+  $("#form").submit(function(event){
+    event.preventDefault();
+
+    let input = $('#inputName').val();
     $('#inputName').val("");
 
     // let doctor = new Doctor();
     // let promise = doctor.findDoctor(input);
 
-  var resource_url = `https://api.betterdoctor.com/2016-03-01/doctors?query=${input}&location=45.5122,-122.6587,100&skip=2&limit=10&user_key=${apiKey}`;
+    var resource_url = `https://api.betterdoctor.com/2016-03-01/doctors?query=${input}&location=45.5122,-122.6587,100&skip=2&limit=10&user_key=${process.env.exports.apiKey}`;
 
 
-  $.get(resource_url, function (data) {
+    $.get(resource_url, function (data) {
+        if(data.data.length == 0){
+          document.getElementById('content-placeholder').innerHTML = "there are no doctors matching your criteria";
+        } else {
 
-    // var body = jQuery.parseJSON(JSON.stringify(data));
-      var doctor = Handlebars.compile(document.getElementById('docs-template').innerHTML);
-      document.getElementById('content-placeholder').innerHTML = doctor(data) ;
+          var doctor = Handlebars.compile(document.getElementById('docs-template').innerHTML);
+          document.getElementById('content-placeholder').innerHTML = doctor(data) ;
+        }
+      // var body = jQuery.parseJSON(JSON.stringify(data));
 
-      });
-
-
-
-
-
-
-
-
+    }).fail(function(error) {
+      if(error.responseJSON.meta.message){
+        console.log(error.responseJSON.meta.message);
+        document.getElementById('content-placeholder').innerHTML = error.responseJSON.meta.message;
+      }
+    });
 
 });
 $("#issues").submit(function(event){
