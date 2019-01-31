@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -7,8 +6,6 @@
 </head>
 <body>
   <h3>BetterDoctor - Doctor Search Results</h3>
-
-
   <form id="form" action="index.html" method="post">
     <label for="name">enter name of doctor or symptoms </label>
     <input id="inputName" type="text" name="medical" value="">
@@ -21,8 +18,6 @@
           <th>Title</th>
           <th>Picture</th>
           <th>practices</th>
-
-
         </thead>
         <tbody>
           {{#data}}
@@ -31,18 +26,16 @@
               <img src="{{ratings.0.image_url_small}}"></img></td>
               <td>{{profile.title}}</td>
               <td><img src="{{profile.image_url}}"></img></td>
-
               <td>
+
                 <p class="address">
                   {{#practices}}
                   {{name}}<br>
                   {{visit_address.street}}<br>
                   {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}
                   <a href="{{website}}">visit website</a>
-
                   <br>
                     {{#if accepts_new_patients}}is accepting new patients{{/if}}
-
                   {{/practices}}
                 </p></td>
               </tr>
@@ -50,9 +43,6 @@
             </tbody>
           </table>
         </script>
-
-
       </form>
-    
-      </body>
-      </html>
+    </body>
+  </html>
